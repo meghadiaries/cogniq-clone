@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Cpu } from 'lucide-react';
-import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,59 +16,29 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navigationItems = [
-    { label: 'Home', path: '/' },
-    { label: 'About Us', path: '#about' },
-    { label: 'Services', path: '#services' },
-    { label: 'Our Lab', path: '#lab' },
-    { label: 'Blogs', path: '#blog' },
-  ];
-
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
-      <div className={styles.navContainer}>
-        <Link href="/" className={styles.logoWrapper}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container flex justify-between items-center w-full">
+        <Link href="/" className="flex items-center gap-2">
           <Cpu className="w-8 h-8 text-[#5850ec]" />
-          <span className={styles.logoText}>Cogniq AI</span>
+          <span className="text-xl font-extrabold text-[#3730a3]">Cogniq AI</span>
         </Link>
 
-        <div className={styles.linksList}>
-          {navigationItems.map((item) => (
-            <Link key={item.label} href={item.path} className={styles.navLink}>
-              {item.label}
+        <div className="hidden lg:flex items-center gap-8">
+          {['Home', 'About Us', 'Services', 'Our Lab'].map((item) => (
+            <Link key={item} href={`#${item.toLowerCase().replace(' ', '')}`} className="text-sm font-semibold text-[#5850ec]">
+              {item}
             </Link>
           ))}
-          <Link href="#contact" className={styles.contactBtn}>
+          <Link href="#contact" className="btn-primary ml-4">
             Contact Us
           </Link>
         </div>
 
-        <button className={styles.menuToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        <button className="lg:hidden text-[#3730a3]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {mobileMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
-
-      {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[80px] bg-white z-[55] py-10 px-8 flex flex-col gap-6 animate-fade-in">
-          {navigationItems.map((item) => (
-            <Link 
-              key={item.label} 
-              href={item.path} 
-              className="text-xl font-bold text-[#3730a3]"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link 
-            href="#contact" 
-            className="w-full py-4 bg-[#3730a3] text-center text-white font-bold rounded-xl"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Contact Us
-          </Link>
-        </div>
-      )}
     </nav>
   );
 }

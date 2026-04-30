@@ -12,45 +12,31 @@ export default function Home() {
   return (
     <main className="min-h-screen selection:bg-[#5850ec] selection:text-white bg-white">
       <Navbar />
-      
       <Hero />
-      
-      {/* New About Us section inserted above Services */}
       <AboutUs />
-
       <Services />
-
       <WhyChooseUs />
-
-      <div id="lab">
-        <Process />
-      </div>
+      <Process />
       
-      {/* Interaction Conversion Section */}
-      <section id="contact" className="py-24 bg-white">
-        <div className="container px-6">
-          <div className="bg-gradient-to-br from-[#1e1b4b] to-[#4338ca] rounded-[3rem] p-12 md:p-20 text-center text-white shadow-2xl">
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">
+      {/* Interaction Conversion Section - Using global CSS classes */}
+      <section id="contact" className="py-24 container">
+        <div className="cta-box" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?auto=format&fit=crop&q=80&w=1200")' }}>
+          <div className="cta-overlay" />
+          <div className="cta-content">
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-white leading-tight">
               Ready to transform Your Workflow?
             </h2>
-            <p className="text-xl text-indigo-100/80 mb-10 max-w-2xl mx-auto font-medium">
-              Let's build a clear, actionable roadmap to solve your biggest operational challenges with AI.
+            <p className="text-lg text-gray-200 mb-10 max-w-2xl mx-auto font-medium">
+              Let's build a clear, actionable roadmap to solve your biggest operational challenges with AI
             </p>
-            <button className="px-10 py-4 bg-white text-[#1e1b4b] font-black rounded-xl hover:scale-105 transition-all shadow-xl text-lg">
-              Book a Strategy Call
+            <button className="btn-primary inline-flex items-center gap-2">
+              Book a Strategy Call <span className="text-xl">→</span>
             </button>
           </div>
         </div>
       </section>
 
       <Footer />
-
-      <style jsx>{`
-        .container {
-          max-width: 1440px;
-          margin: 0 auto;
-        }
-      `}</style>
     </main>
   );
 }
