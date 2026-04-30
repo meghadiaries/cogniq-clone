@@ -2,59 +2,71 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Lightbulb, Target, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-600/20 blur-[120px] rounded-full" />
-      <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-indigo-600/20 blur-[120px] rounded-full" />
+    <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+      {/* Floating Decorative Icons */}
+      <motion.div 
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-40 left-[10%] p-4 bg-white rounded-full shadow-xl border border-gray-100 hidden lg:block"
+      >
+        <Lightbulb className="w-8 h-8 text-gray-400" />
+      </motion.div>
 
-      <div className="container relative z-10">
-        <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-wider mb-6 uppercase">
-              Engineering the Next Generation
-            </span>
-          </motion.div>
+      <motion.div 
+        animate={{ y: [0, 20, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-52 right-[10%] p-4 bg-white rounded-full shadow-xl border border-gray-100 hidden lg:block"
+      >
+        <Target className="w-8 h-8 text-blue-400" />
+      </motion.div>
 
+      <motion.div 
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-40 right-[15%] p-4 bg-white rounded-full shadow-xl border border-gray-100 hidden lg:block"
+      >
+        <Sparkles className="w-8 h-8 text-purple-400" />
+      </motion.div>
+
+      <div className="container relative z-10 text-center">
+        <div className="max-w-5xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold leading-[1.1] mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400"
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-10 text-[#333]"
           >
-            Building Intelligent, Scalable AI solutions for the Next Generation
+            Building <span className="text-[#5850ec]">Intelligent</span>, scalable AI solutions for the <span className="text-[#5850ec]">Next Generation</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-gray-400 mb-10 max-w-2xl"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-gray-500 mb-12 max-w-3xl mx-auto font-medium"
           >
-            Your premier AI & Software engineering partner — transforming ideas into reliable, high-performance products.
+            Your premier AI & Software engineering partner - transforming ideas into reliable, high-performance products.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-5 justify-center items-center"
           >
             <Link 
               href="#services" 
-              className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all text-center"
+              className="px-10 py-4 bg-white text-[#3730a3] font-bold rounded-xl border-2 border-[#3730a3] hover:bg-gray-50 transition-all min-w-[240px]"
             >
               Explore our services
             </Link>
             <Link 
               href="#contact" 
-              className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-all text-center"
+              className="px-10 py-4 bg-gradient-to-r from-[#1e1b4b] to-[#6366f1] text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-lg min-w-[240px]"
             >
               Book a Strategy Call
             </Link>

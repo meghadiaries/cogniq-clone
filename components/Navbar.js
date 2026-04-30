@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Cpu } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,47 +17,49 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: 'Home', href: '/' },
     { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Our Lab', href: '#lab' },
     { name: 'Blogs', href: '#blog' },
-    { name: 'Contact Us', href: '#contact' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0a0b]/80 backdrop-blur-md border-b border-white/5 py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="container flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white text-xl">C</div>
-          <span className="text-xl font-bold tracking-tight">COGNIO AI</span>
+          <div className="w-9 h-9 bg-white border border-gray-100 rounded-lg flex items-center justify-center shadow-sm">
+            <Cpu className="w-6 h-6 text-[#5850ec]" />
+          </div>
+          <span className="text-2xl font-bold tracking-tight text-[#3730a3]">Cogniq AI</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            <Link key={link.name} href={link.href} className="text-[15px] font-semibold text-[#5850ec] hover:text-[#3730a3] transition-colors">
               {link.name}
             </Link>
           ))}
-          <Link href="#contact" className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full transition-all">
-            Get Started
+          <Link href="#contact" className="ml-4 px-7 py-3 bg-[#1e1b4b] hover:bg-[#3730a3] text-white text-[15px] font-bold rounded-xl transition-all shadow-md">
+            Contact Us
           </Link>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button className="lg:hidden text-[#3730a3]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#0a0a0b] border-b border-white/5 py-6 px-4 flex flex-col gap-4 animate-fade-in">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 py-8 px-6 flex flex-col gap-6 shadow-xl">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href} 
-              className="text-lg font-medium text-gray-300"
+              className="text-lg font-bold text-[#3730a3]"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
@@ -65,19 +67,19 @@ export default function Navbar() {
           ))}
           <Link 
             href="#contact" 
-            className="w-full py-3 bg-blue-600 text-center text-white font-semibold rounded-lg"
+            className="w-full py-4 bg-[#1e1b4b] text-center text-white font-bold rounded-xl"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Get Started
+            Contact Us
           </Link>
         </div>
       )}
 
       <style jsx>{`
         .container {
-          max-width: 1200px;
+          max-width: 1240px;
           margin: 0 auto;
-          padding: 0 1.5rem;
+          padding: 0 2rem;
           display: flex;
           align-items: center;
           justify-content: space-between;

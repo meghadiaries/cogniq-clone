@@ -1,14 +1,13 @@
 :root {
-  --background: #0a0a0b;
-  --foreground: #f8fafc;
-  --primary: #3b82f6;
-  --primary-accent: #6366f1;
-  --secondary: #1e293b;
-  --accent: #0ea5e9;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --text-muted: #94a3b8;
-  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-accent));
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --primary: #5850ec; /* Bright Indigo from image */
+  --primary-light: #eef2ff;
+  --secondary: #f1f5f9;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border: #e2e8f0;
+  --indigo-gradient: linear-gradient(135deg, #3730a3, #6366f1);
 }
 
 * {
@@ -23,8 +22,25 @@ body {
   overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Outfit', 'Inter', sans-serif;
   line-height: 1.6;
+}
+
+/* Grid Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--secondary) 1px, transparent 1px),
+    linear-gradient(90deg, var(--secondary) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 a {
@@ -40,7 +56,8 @@ button {
 }
 
 h1, h2, h3, h4 {
-  font-weight: 700;
+  color: var(--text-main);
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
@@ -58,14 +75,4 @@ h1, h2, h3, h4 {
   .section-padding {
     padding: 4rem 0;
   }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
 }
