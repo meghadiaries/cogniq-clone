@@ -7,23 +7,23 @@ import styles from './WhyChooseUs.module.css';
 const VALUE_PROPS = [
   {
     title: 'High-Trust Engineering',
-    desc: 'Research-backed methods with transparent communication every step of the way.',
-    icon: <ShieldCheck className="w-6 h-6 text-[#5850ec]" />,
+    desc: 'Research-backed methods with transparent communication.',
+    icon: <ShieldCheck className="w-8 h-8" />,
   },
   {
     title: 'Built for Scale',
-    desc: 'We build systems that grow with your business without breaking under pressure.',
-    icon: <TrendingUp className="w-6 h-6 text-[#5850ec]" />,
+    desc: 'Your product grows without breaking.',
+    icon: <TrendingUp className="w-8 h-8" />,
   },
   {
     title: 'Gen AI Expertise',
-    desc: 'Deep experience with Large Language Models and custom AI architectures.',
-    icon: <Cpu className="w-6 h-6 text-[#5850ec]" />,
+    desc: 'Deep experience with LLMs and custom AI.',
+    icon: <Cpu className="w-8 h-8" />,
   },
   {
     title: 'User-Centered Design',
-    desc: 'Every feature is intuitive, purposeful, and designed for human interaction.',
-    icon: <LayoutTemplate className="w-6 h-6 text-[#5850ec]" />,
+    desc: 'Every feature is intuitive and purposeful.',
+    icon: <LayoutTemplate className="w-8 h-8" />,
   },
 ];
 
@@ -31,32 +31,33 @@ export default function WhyChooseUs() {
   return (
     <section className={styles.brandingSection}>
       <div className={styles.layoutGrid}>
-        <div className={styles.textContent}>
-          <h2 className={styles.sectionTitle}>Why Choose Us</h2>
-          <div className={styles.featureList}>
-            {VALUE_PROPS.map((prop) => (
-              <div key={prop.title} className={styles.featureItem}>
-                <div className={styles.iconBox}>
-                  {prop.icon}
-                </div>
-                <h3 className={styles.featureTitle}>{prop.title}</h3>
-                <p className={styles.featureText}>{prop.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div className={styles.titleArea}>
+          <h2 className={styles.mainTitle}>Why Choose Us</h2>
+          <div className={styles.titleUnderline} />
+          <p className={styles.subtitle}>
+            Passion for precision, commitment to quality.
+          </p>
         </div>
         
-        <div className={styles.visualContent}>
-          <div className={styles.interactionLayer}>
-             <div className={styles.spinner}>
-               <div className="w-3/4 h-3/4 border border-indigo-100 rounded-full flex items-center justify-center">
-                 <div className="w-1/2 h-1/2 bg-blue-500/5 blur-3xl rounded-full" />
-               </div>
-             </div>
-             <div className={styles.coreIcon}>
-               <Cpu className="w-16 h-16 text-[#5850ec]" />
-             </div>
-          </div>
+        <div className={styles.featureGrid}>
+          {VALUE_PROPS.map((prop, idx) => (
+            <motion.div 
+              key={prop.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className={styles.featureCard}
+            >
+              <div className={styles.iconContainer}>
+                {prop.icon}
+              </div>
+              <div className={styles.cardBody}>
+                <h3 className={styles.cardTitle}>{prop.title}</h3>
+                <p className={styles.cardText}>{prop.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

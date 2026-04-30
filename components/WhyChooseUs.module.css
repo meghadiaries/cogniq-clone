@@ -1,112 +1,110 @@
 .brandingSection {
-  padding: 120px 5%;
-  background: #ffffff;
+  padding: 100px 5%;
+  background: #f5f6ff; /* Match the subtle blue bg from image */
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .layoutGrid {
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  max-width: 1440px;
-  margin: 0 auto;
-  align-items: center;
+  gap: 60px;
+  align-items: flex-start;
 }
 
 @media (min-width: 1024px) {
   .layoutGrid {
     flex-direction: row;
+    gap: 100px;
   }
 }
 
-.textContent {
+.titleArea {
   flex: 1;
+  max-width: 300px;
 }
 
-.sectionTitle {
-  font-size: 48px;
-  font-weight: 800;
-  color: #111827;
-  margin-bottom: 48px;
+.mainTitle {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1e1b4b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
-.featureList {
+.titleUnderline {
+  width: 40px;
+  height: 4px;
+  background: #5850ec;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.featureGrid {
+  flex: 2;
   display: grid;
   grid-template-cols: 1fr;
-  gap: 40px;
+  gap: 24px;
+  width: 100%;
 }
 
-@media (min-width: 640px) {
-  .featureList {
+@media (min-width: 768px) {
+  .featureGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.featureItem {
+.featureCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: #5850ec;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.cardBody {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 4px;
 }
 
-.iconBox {
-  padding: 12px;
-  background: #eef2ff;
-  border-radius: 12px;
-  width: fit-content;
+.cardTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e1b4b;
 }
 
-.featureTitle {
-  font-size: 20px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.featureText {
-  font-size: 15px;
+.cardText {
+  font-size: 14px;
   color: #6b7280;
-  line-height: 1.6;
-}
-
-.visualContent {
-  flex: 1;
-  width: 100%;
-}
-
-.interactionLayer {
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
-  border-radius: 48px;
-  border: 1px solid #f1f5f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.spinner {
-  width: 100%;
-  height: 100%;
-  border: 2px dashed rgba(88, 80, 236, 0.15);
-  border-radius: 50%;
-  animation: rotate 20s linear infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.coreIcon {
-  width: 120px;
-  height: 120px;
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
+  line-height: 1.4;
+  font-weight: 500;
 }

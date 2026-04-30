@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import AboutUs from '@/components/AboutUs';
 import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Process from '@/components/Process';
@@ -14,17 +15,8 @@ export default function Home() {
       
       <Hero />
       
-      {/* Branding Narrative Section */}
-      <section id="about" className="w-full bg-[#f5f6ff] flex justify-center py-24 overflow-hidden scroll-mt-24">
-        <div className="container px-6 text-center">
-          <h3 className="text-[#5850ec] font-black tracking-[0.2em] uppercase text-sm mb-8">
-            Engineering Trust. Delivering Intelligence.
-          </h3>
-          <h2 className="text-3xl md:text-5xl font-extrabold max-w-4xl mx-auto leading-tight text-[#111827]">
-            At Cogniq AI, we don't just develop features, we build full-scale AI systems designed for clarity, transparency, and long-term growth.
-          </h2>
-        </div>
-      </section>
+      {/* New About Us section inserted above Services */}
+      <AboutUs />
 
       <Services />
 
