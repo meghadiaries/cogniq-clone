@@ -1,0 +1,111 @@
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #f1f5f9;
+}
+.navContainer {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Sections Common */
+.section {
+  padding: 80px 5%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.hero {
+  min-height: 90vh;
+  padding-top: 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heroHeading {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #1e1b4b;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+.accent { color: #5850ec; }
+
+/* About Us Section */
+.aboutWrap {
+  background: #f5f6ff;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+.gradientBar {
+  width: 20px;
+  height: 200px;
+  background: linear-gradient(#6366f1, #1e1b4b);
+  border-radius: 4px;
+}
+
+/* Services Grid (2x2) */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+.serviceCard {
+  background: #f5f6ff;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+/* Why Choose Us (2x2 Cards) */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.featureCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* Process (2x2 Dark) */
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+.processCard {
+  background: #111827;
+  color: white;
+  border-radius: 24px;
+  padding: 40px;
+  min-height: 300px;
+}
+
+/* Footer */
+.footer {
+  background: #232326;
+  color: white;
+  padding: 80px 5% 40px;
+}
