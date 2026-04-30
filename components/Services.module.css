@@ -1,0 +1,85 @@
+.servicesContainer {
+  padding: 100px 5%;
+  background: #f9fafb;
+}
+
+.headingArea {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 18px;
+  color: #6b7280;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.serviceCard {
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 32px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+  border-color: rgba(88, 80, 236, 0.2);
+}
+
+.iconWrapper {
+  margin-bottom: 32px;
+  padding: 16px;
+  background: #eef2ff;
+  border-radius: 16px;
+  width: fit-content;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.cardText {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+}

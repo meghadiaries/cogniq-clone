@@ -11,12 +11,13 @@ export default function Home() {
   return (
     <main className="min-h-screen selection:bg-[#5850ec] selection:text-white bg-white">
       <Navbar />
+      
       <Hero />
       
-      {/* About Us Section matched to DOM: bg-[#F5F6FF] */}
-      <section id="about" className="w-full bg-[#f5f6ff] flex justify-center py-14 overflow-hidden scroll-mt-24">
-        <div className="container text-center">
-          <h3 className="text-[#5850ec] font-black tracking-[0.2em] uppercase text-sm mb-6">
+      {/* Branding Narrative Section */}
+      <section id="about" className="w-full bg-[#f5f6ff] flex justify-center py-24 overflow-hidden scroll-mt-24">
+        <div className="container px-6 text-center">
+          <h3 className="text-[#5850ec] font-black tracking-[0.2em] uppercase text-sm mb-8">
             Engineering Trust. Delivering Intelligence.
           </h3>
           <h2 className="text-3xl md:text-5xl font-extrabold max-w-4xl mx-auto leading-tight text-[#111827]">
@@ -25,22 +26,18 @@ export default function Home() {
         </div>
       </section>
 
-      <div id="services" className="scroll-mt-24 bg-white">
-        <Services />
-      </div>
+      <Services />
 
-      <div id="why-choose-us" className="scroll-mt-24 bg-gradient-to-br from-[#f8f9ff] to-[#f0f2ff]">
-        <WhyChooseUs />
-      </div>
+      <WhyChooseUs />
 
-      <div id="lab" className="scroll-mt-24 bg-white">
+      <div id="lab">
         <Process />
       </div>
       
-      {/* Final CTA matched to DOM Footer style */}
-      <section id="contact" className="section-padding bg-white">
-        <div className="container">
-          <div className="bg-gradient-to-br from-[#1e1b4b] to-[#4338ca] rounded-[2.5rem] p-12 md:p-20 text-center text-white shadow-2xl">
+      {/* Interaction Conversion Section */}
+      <section id="contact" className="py-24 bg-white">
+        <div className="container px-6">
+          <div className="bg-gradient-to-br from-[#1e1b4b] to-[#4338ca] rounded-[3rem] p-12 md:p-20 text-center text-white shadow-2xl">
             <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">
               Ready to transform Your Workflow?
             </h2>
@@ -60,10 +57,6 @@ export default function Home() {
         .container {
           max-width: 1440px;
           margin: 0 auto;
-          padding: 0 1.5rem;
-        }
-        .section-padding {
-          padding: 8rem 0;
         }
       `}</style>
     </main>

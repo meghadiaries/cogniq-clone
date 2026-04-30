@@ -1,0 +1,91 @@
+.workflowSection {
+  padding: 120px 5%;
+  background: #f9fafb;
+  position: relative;
+}
+
+.stickyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .stickyContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.staticHeader {
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .staticHeader {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.stepsList {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.stepRow {
+  display: flex;
+  gap: 40px;
+}
+
+.stepNumber {
+  font-size: 64px;
+  font-weight: 900;
+  color: #e5e7eb;
+  transition: color 0.4s ease;
+  line-height: 1;
+}
+
+.stepRow:hover .stepNumber {
+  color: rgba(88, 80, 236, 0.2);
+}
+
+.stepContent {
+  padding-top: 8px;
+}
+
+.stepTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.stepRow:hover .stepTitle {
+  color: #5850ec;
+}
+
+.stepText {
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 500px;
+}
