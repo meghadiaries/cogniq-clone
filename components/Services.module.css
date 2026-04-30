@@ -1,0 +1,77 @@
+.servicesSection {
+  padding: 100px 5%;
+  background: white;
+}
+
+.sectionHeader {
+  max-width: 1440px;
+  margin: 0 auto 60px;
+}
+
+.mainTitle {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1e1b4b;
+}
+
+.titleUnderline {
+  width: 40px;
+  height: 4px;
+  background: #5850ec;
+  margin: 16px 0 24px;
+}
+
+.servicesGrid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.serviceCard {
+  background: #f5f6ff;
+  padding: 40px;
+  border-radius: 24px;
+}
+
+.iconCircle {
+  width: 50px;
+  height: 50px;
+  background: #5850ec;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #5850ec;
+  margin-bottom: 16px;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.viewAllWrapper {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.viewAllLink {
+  color: #5850ec;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

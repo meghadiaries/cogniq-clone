@@ -1,0 +1,77 @@
+.brandingSection {
+  padding: 100px 5%;
+  background: #f5f6ff;
+}
+
+.layoutGrid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+@media (min-width: 1024px) {
+  .layoutGrid {
+    flex-direction: row;
+  }
+}
+
+.titleArea {
+  flex: 1;
+}
+
+.mainTitle {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1e1b4b;
+}
+
+.titleUnderline {
+  width: 40px;
+  height: 4px;
+  background: #5850ec;
+  margin: 16px 0 24px;
+}
+
+.featureGrid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.featureCard {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.iconContainer {
+  width: 60px;
+  height: 60px;
+  background: #5850ec;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin-bottom: 8px;
+}
+
+.cardText {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}

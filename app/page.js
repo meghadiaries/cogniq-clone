@@ -29,7 +29,7 @@ export default function Home() {
             <p className="text-lg text-gray-200 mb-10 max-w-2xl mx-auto font-medium">
               Let's build a clear, actionable roadmap to solve your biggest operational challenges with AI
             </p>
-            <button className="btn-primary inline-flex items-center gap-2">
+            <button className="btn-cta">
               Book a Strategy Call <span className="text-xl">→</span>
             </button>
           </div>

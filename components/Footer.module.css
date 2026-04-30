@@ -1,0 +1,96 @@
+.footer {
+  background: #232326;
+  padding: 80px 5% 40px;
+  color: white;
+}
+
+.footerGrid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.brandingCol {
+  grid-column: span 1;
+}
+
+@media (min-width: 1024px) {
+  .brandingCol {
+    grid-column: span 2;
+  }
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+}
+
+.brandPitch {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.linkColTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.linksStack {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footerLink {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.legalBar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.legalLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.legalLink {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 12px;
+}

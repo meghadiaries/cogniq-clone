@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Cpu } from 'lucide-react';
+import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,26 +18,26 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container flex justify-between items-center w-full">
-        <Link href="/" className="flex items-center gap-2">
+    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
+      <div className={styles.navContainer}>
+        <Link href="/" className="flex items-center gap-2" style={{textDecoration: 'none'}}>
           <Cpu className="w-8 h-8 text-[#5850ec]" />
-          <span className="text-xl font-extrabold text-[#3730a3]">Cogniq AI</span>
+          <span className={styles.logoText}>Cogniq AI</span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className={styles.linksList}>
           {['Home', 'About Us', 'Services', 'Our Lab'].map((item) => (
-            <Link key={item} href={`#${item.toLowerCase().replace(' ', '')}`} className="text-sm font-semibold text-[#5850ec]">
+            <Link key={item} href={`#${item.toLowerCase().replace(' ', '')}`} className={styles.navLink}>
               {item}
             </Link>
           ))}
-          <Link href="#contact" className="btn-primary ml-4">
+          <Link href="#contact" className={styles.contactBtn}>
             Contact Us
           </Link>
         </div>
 
-        <button className="lg:hidden text-[#3730a3]" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X /> : <Menu />}
+        <button className="lg:hidden" style={{background: 'none', border: 'none', cursor: 'pointer', color: '#3730a3'}} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
     </nav>
