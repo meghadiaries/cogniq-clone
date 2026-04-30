@@ -1,13 +1,16 @@
 :root {
   --background: #ffffff;
   --foreground: #1e293b;
-  --primary: #5850ec; /* Bright Indigo from image */
-  --primary-light: #eef2ff;
-  --secondary: #f1f5f9;
-  --text-main: #111827;
-  --text-muted: #6b7280;
-  --border: #e2e8f0;
-  --indigo-gradient: linear-gradient(135deg, #3730a3, #6366f1);
+  --primary: #5850ec;
+  --primary-dark: #3730a3;
+  --accent: #6366f1;
+  --bg-about: #f5f6ff;
+  --bg-gradient-from: #f8f9ff;
+  --bg-gradient-to: #f0f2ff;
+  --footer-bg: #232326;
+  --border-light: #f3f4f6;
+  --text-dark: #111827;
+  --text-gray: #4b5563;
 }
 
 * {
@@ -22,8 +25,9 @@ body {
   overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Outfit', 'Inter', sans-serif;
-  line-height: 1.6;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Grid Background Pattern */
@@ -35,12 +39,12 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(var(--secondary) 1px, transparent 1px),
-    linear-gradient(90deg, var(--secondary) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(#f1f5f9 1px, transparent 1px),
+    linear-gradient(90deg, #f1f5f9 1px, transparent 1px);
+  background-size: 45px 45px;
   background-position: center center;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 a {
@@ -56,23 +60,23 @@ button {
 }
 
 h1, h2, h3, h4 {
-  color: var(--text-main);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .section-padding {
-  padding: 8rem 0;
+  padding: 5.5rem 0;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .section-padding {
-    padding: 4rem 0;
+    padding: 7rem 0;
   }
 }
