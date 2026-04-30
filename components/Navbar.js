@@ -3,9 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Cpu } from 'lucide-react';
-import styles from './Layout.module.css';
+import styles from './Navbar.module.css';
 
-// Navbar implementation - focused on sticky behavior for the assessment
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,30 +17,59 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navigationItems = [
+    { label: 'Home', path: '/' },
+    { label: 'About Us', path: '#about' },
+    { label: 'Services', path: '#services' },
+    { label: 'Our Lab', path: '#lab' },
+    { label: 'Blogs', path: '#blog' },
+  ];
+
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className={styles.logoWrapper}>
           <Cpu className="w-8 h-8 text-[#5850ec]" />
-          <span className="text-xl font-extrabold text-[#3730a3]">Cogniq AI</span>
+          <span className={styles.logoText}>Cogniq AI</span>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-8">
-          {['Home', 'About Us', 'Services', 'Our Lab'].map((item) => (
-            <Link key={item} href={`#${item.toLowerCase().replace(' ', '')}`} className="text-sm font-semibold text-[#5850ec] hover:text-[#3730a3]">
-              {item}
+        <div className={styles.linksList}>
+          {navigationItems.map((item) => (
+            <Link key={item.label} href={item.path} className={styles.navLink}>
+              {item.label}
             </Link>
           ))}
-          <Link href="#contact" className="ml-4 px-6 py-2.5 bg-[#3730a3] text-white text-sm font-bold rounded-lg hover:bg-[#1e1b4b]">
+          <Link href="#contact" className={styles.contactBtn}>
             Contact Us
           </Link>
         </div>
 
-        <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X /> : <Menu />}
+        <button className={styles.menuToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 top-[80px] bg-white z-[55] py-10 px-8 flex flex-col gap-6 animate-fade-in">
+          {navigationItems.map((item) => (
+            <Link 
+              key={item.label} 
+              href={item.path} 
+              className="text-xl font-bold text-[#3730a3]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link 
+            href="#contact" 
+            className="w-full py-4 bg-[#3730a3] text-center text-white font-bold rounded-xl"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Contact Us
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

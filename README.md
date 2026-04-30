@@ -1,28 +1,28 @@
-# Cogniq AI Homepage - 2hr Speed Assessment
+# Cogniq AI - Custom AI Solutions & Engineering Partner
 
-A high-fidelity clone of the Cogniq AI homepage, developed as part of a 2-hour technical assessment.
+A high-fidelity, production-ready frontend clone of the Cogniq AI homepage. This project demonstrates modern web development practices using React, Next.js, and Framer Motion.
 
-## Project Scope
-- **Timeframe**: 2 Hours (Fixed)
-- **Objective**: Clone the target homepage with maximum visual accuracy using React/Next.js.
-- **Tech Stack**: Next.js 16 (App Router), React 19, Framer Motion, Lucide React, CSS Modules.
+## Features
+- **Modular Component Architecture**: Every section is a self-contained React component with scoped CSS modules.
+- **Premium Aesthetics**: Direct implementation of the original design's color palette, typography (Poppins/Inter), and layout hierarchy.
+- **Dynamic 2x2 Grid Layouts**: Custom implementations for Services, Why Choose Us, and Process sections.
+- **Sticky Glassmorphism Navbar**: Fully responsive navigation with smooth transitions.
+- **Animated Interactions**: Scroll-triggered reveals and floating UI elements using Framer Motion.
 
-## Development Strategy
-Given the 2-hour limit, the following development strategy was adopted:
-1. **Consolidated Styling**: Component styles are centralized in `Layout.module.css` to reduce file overhead and maximize development speed.
-2. **Prioritized Layout**: Focus was placed on the complex 2x2 grid structures and responsive navigation.
-3. **Motion Assets**: Used `framer-motion` for reveal effects to match the premium "feel" of the original site without custom keyframe overhead.
+## Technology Stack
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Library**: [React](https://reactjs.org/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Styling**: CSS Modules (Vanilla CSS)
 
-## Key Features
-- **Sticky Glassmorphism Navbar**: Responsive with mobile toggle support.
-- **Dynamic 2x2 Grids**: Custom implementations for Services, Why Choose Us, and the Process sections.
-- **Animated Hero**: Floating elements and staggered text reveal.
-- **Dark-Themed Footer**: Fully structured navigational hierarchy.
+## Getting Started
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## How to Run
-```bash
-npm install
-npm run dev
-```
-
-*Note: This project is a time-boxed assessment and focuses on frontend fidelity and component structure.*
+## Project Structure
+- `app/`: Routing and global styles.
+- `components/`: Modular UI components and their respective CSS modules.
+- `public/`: Static assets.
