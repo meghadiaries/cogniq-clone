@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Cpu } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -13,12 +12,9 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerGrid}>
         <div className={styles.brandingCol}>
-          <Link href="/" className={styles.footerLogo}>
-            <Cpu className="w-8 h-8 text-white" />
-            <span className={styles.logoText}>Cogniq AI</span>
-          </Link>
+          {/* Logo and Brand Title removed from here */}
           <p className={styles.brandPitch}>
-            A Cogniq Labs Division. Building intelligent AI apps that transform how you interact with technology.
+            Building intelligent AI apps that transform how you interact with technology.
           </p>
         </div>
 
@@ -33,7 +29,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.legalBar}>
-        <p className={styles.copyright}>© 2026 Cogniq AI. All Rights Reserved.</p>
+        <p className={styles.copyright}>© 2026. All Rights Reserved.</p>
         <div className={styles.legalLinks}>
           <Link href="#" className={styles.legalLink}>Terms of service</Link>
           <Link href="#" className={styles.legalLink}>Privacy Policy</Link>

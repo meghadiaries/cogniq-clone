@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -20,10 +20,8 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
-        <Link href="/" className="flex items-center gap-2" style={{textDecoration: 'none'}}>
-          <Cpu className="w-8 h-8 text-[#5850ec]" />
-          <span className={styles.logoText}>Cogniq AI</span>
-        </Link>
+        {/* Removed Logo and Text from here */}
+        <div /> 
 
         <div className={styles.linksList}>
           {['Home', 'About Us', 'Services', 'Our Lab'].map((item) => (
