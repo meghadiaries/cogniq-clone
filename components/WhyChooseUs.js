@@ -1,13 +1,12 @@
 'use client';
 
-import { ShieldCheck, TrendingUp, Cpu, LayoutTemplate } from 'lucide-react';
 import styles from './WhyChooseUs.module.css';
 
 const FEATURES = [
-  { title: 'High-Trust Engineering', icon: <ShieldCheck /> },
-  { title: 'Built for Scale', icon: <TrendingUp /> },
-  { title: 'Gen AI Expertise', icon: <Cpu /> },
-  { title: 'User-Centered Design', icon: <LayoutTemplate /> },
+  { title: 'High-Trust Engineering' },
+  { title: 'Built for Scale' },
+  { title: 'Gen AI Expertise' },
+  { title: 'User-Centered Design' },
 ];
 
 export default function WhyChooseUs() {
@@ -23,9 +22,9 @@ export default function WhyChooseUs() {
         <div className={styles.featureGrid}>
           {FEATURES.map((f, i) => (
             <div key={i} className={styles.featureCard}>
-              <div className={styles.iconContainer}>
-                {f.icon}
-              </div>
+              {/* Kept the box but removed the icon for realism */}
+              <div className={styles.iconContainer} />
+              
               <div>
                 <h3 className={styles.cardTitle}>{f.title}</h3>
                 <p className={styles.cardText}>Research-backed methods with transparent delivery.</p>

@@ -1,14 +1,14 @@
 'use client';
 
-import { Bot, Zap, BarChart, MousePointer2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import styles from './Services.module.css';
 
 const SERVICES = [
-  { title: 'AI-Powered Customer Service', icon: <Bot /> },
-  { title: 'Automated Scheduling & Operations', icon: <Zap /> },
-  { title: 'Intelligent Inventory Management', icon: <BarChart /> },
-  { title: 'Micro Tools & Extensions', icon: <MousePointer2 /> },
+  { title: 'AI-Powered Customer Service' },
+  { title: 'Automated Scheduling & Operations' },
+  { title: 'Intelligent Inventory Management' },
+  { title: 'Micro Tools & Extensions' },
 ];
 
 export default function Services() {
@@ -23,9 +23,9 @@ export default function Services() {
       <div className={styles.servicesGrid}>
         {SERVICES.map((s, i) => (
           <div key={i} className={styles.serviceCard}>
-            <div className={styles.iconCircle}>
-              {s.icon}
-            </div>
+            {/* Kept the circle but removed the icon for realism */}
+            <div className={styles.iconCircle} />
+            
             <h3 className={styles.cardTitle}>{s.title}</h3>
             <p className={styles.cardDescription}>
               Scalable AI-driven solutions tailored for operational efficiency and measurable business ROI.
