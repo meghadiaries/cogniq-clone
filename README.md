@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cogniq AI Homepage Clone
 
-## Getting Started
+A high-fidelity frontend clone of the Cogniq AI homepage, built as part of a technical assessment.
 
-First, run the development server:
+## Project Overview
+This project focuses on recreating the premium user experience and design aesthetic of the Cogniq AI website. It features a responsive layout, modern typography, and smooth interactive elements.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
+- **React**: Component-based UI development.
+- **Next.js**: Framework for optimized performance and Vercel deployment.
+- **Vanilla CSS**: Custom styling for glassmorphism and dark mode aesthetics.
+- **Framer Motion**: Interactive scroll animations and transitions.
+- **Lucide React**: Modern iconography.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+- Dynamic Hero section with animated elements.
+- Responsive Services grid with hover interactions.
+- Sticky glassmorphism navigation.
+- Optimized for performance and fast loading.
